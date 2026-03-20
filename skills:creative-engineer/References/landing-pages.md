@@ -81,6 +81,62 @@ Video is a first-class element on top creative sites, not just an embed:
 - **Video mask reveals** — Video visible only through a text shape or custom clip-path. The text becomes a window into the video.
 - **Hover-triggered video** — Thumbnail that plays a preview video on hover (like Active Theory's portfolio tiles). Use `mouseenter`/`mouseleave` to play/pause.
 
+## The Preloader as First Impression
+
+The loading sequence is the first 1–3 seconds of the experience. On sites where performance allows it, treat the preloader as a choreographed entrance — not a spinner.
+
+**When to invest in a preloader:**
+- The site loads heavy assets (WebGL, video, large images) and needs to buy time
+- The brand has a strong visual identity that can be introduced through motion
+- The experience is meant to feel immersive or cinematic
+
+**When to skip it:**
+- The site is lightweight and loads in under a second
+- The audience values speed over ceremony (SaaS, e-commerce, documentation)
+- The content is the attraction, not the wrapper
+
+**Approaches:**
+- **Logo animation** — The brand mark assembles, fills, or reveals through clip-path or stroke animation. Sets the visual tone before content appears.
+- **Progress-driven reveal** — A progress bar or counter tied to actual asset loading. Honest about the wait.
+- **Narrative text** — Short phrases that appear in sequence, building anticipation. Works for storytelling sites.
+- **Coordinated handoff** — The preloader dispatches events when complete, and page animations begin in response. The preloader ending and the page beginning should feel like one continuous motion.
+
+The preloader should match the site's aesthetic temperature exactly. A minimal site needs a minimal preloader. A cinematic site earns a cinematic entrance.
+
+## Non-Standard Navigation
+
+Standard nav (logo left, links right, hamburger on mobile) works for most projects. But for portfolio, creative, and immersive sites, the navigation itself can be part of the concept.
+
+**Approaches:**
+- **Hidden/reveal menus** — Navigation that only appears on interaction (click, hover, scroll to top). Maximizes canvas space for content.
+- **Metaphorical navigation** — Replacing "About/Work/Contact" with language that fits the concept. A game studio might use game terminology. A geography-themed site might use place names. The navigation vocabulary reinforces the world.
+- **The interface IS the navigation** — The entire site is a navigable space (a game world, a map, a terminal, a timeline). No traditional nav exists because movement through the space IS navigation.
+- **Scroll-as-navigation** — Sections flow as a continuous narrative. No nav links needed — the user discovers content by scrolling. A subtle progress indicator shows position.
+- **Mega menus with staggered animation** — Full-screen overlays that animate in with staggered reveals. The menu opening is itself a moment of delight.
+
+The navigation approach should match the project's purpose. An immersive portfolio can afford experimental navigation. A SaaS product page cannot — users need to find pricing fast.
+
+## Scroll-Driven Storytelling Through Theme
+
+The color palette doesn't have to be static across the page. Shifting the entire theme — background, text color, accent — as the user scrolls through sections creates narrative progression through atmosphere.
+
+**How it works:**
+- Each section declares its own theme via a data attribute (`[data-theme="dark"]`, `[data-theme="warm"]`, etc.)
+- CSS custom properties update per-section, and transitions smooth the shift
+- Or use ScrollTrigger to interpolate between palette values based on scroll position
+
+**When it works best:**
+- Pages that tell a story with distinct chapters or moods
+- Product pages that shift from problem (dark, tense) to solution (light, open)
+- Portfolios where each project has its own visual identity
+
+**When to avoid:**
+- Short pages where the shift would feel abrupt
+- Functional interfaces where consistency aids usability
+- Pages where the user jumps between sections via nav links (the scroll progression is lost)
+
+The shift should feel inevitable, not jarring. Transition between palettes that share at least one common value (a shared neutral, a consistent accent) so the change reads as evolution rather than a break.
+
 ## The Human Touch
 
 In a world of AI-generated perfection, intentional imperfection signals authenticity:

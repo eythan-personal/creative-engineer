@@ -15,8 +15,13 @@ What is the ONE thing someone will remember about this interface? Not "it looked
 - "Typography IS the interface — no images, no icons, just type at extreme scale"
 - "Every section uses a different clip-path reveal triggered by scroll"
 - "The site feels like opening a physical book — page turns, paper texture, serif type"
+- "The portfolio IS a game world you walk through — the medium is the message"
+- "The color palette shifts as you scroll, telling the story through atmosphere alone"
+- "Absolute restraint — no animation, no effects, just perfect typography and whitespace"
 
 If you can't state the concept in one sentence, you don't have one yet.
+
+**The strongest concepts make the medium the message.** A portfolio that IS an interactive experience is more memorable than one that shows screenshots of interactive experiences. A product page that feels like using the product is more persuasive than one that describes it. Ask: can the interface itself embody what it's communicating?
 
 ### 2. Aesthetic Temperature
 Pick a position and commit fully. But **do not default to dark background + warm accent + editorial serif.** That is the AI-generated portfolio default. Actively pick something less obvious.
@@ -38,6 +43,7 @@ Match the stack to the vision — don't reach for everything:
 - Lottie for designer-grade vector animations
 - Canvas 2D for custom particle effects and generative visuals
 - CSS-only when restraint IS the aesthetic
+- **Nothing.** Zero animation, zero effects — when the content and typography are strong enough to carry the page alone. Some of the most respected product and luxury sites use almost no motion. Restraint is not a failure of imagination — it's a deliberate choice that signals confidence.
 
 Pick ONE primary strategy. Adding a particle canvas AND scroll animations AND custom cursors AND a marquee is not a strategy — it's a grab bag.
 
@@ -63,6 +69,7 @@ These apply to every frontend output. No exceptions.
 ### Typography
 - Never use: Inter, Roboto, Arial, Helvetica, system-ui, Open Sans, Lato, Montserrat, Poppins, Space Grotesk
 - Choose distinctive fonts. Every project should use a different combination.
+- Think in tiers, not pairs. The strongest typographic systems use 3–4 fonts with distinct roles: **display** (headlines, hero), **body** (readable prose), **mono** (code, labels, data), and optionally **accent** (pull quotes, special elements). Each tier serves a different function — don't use two fonts doing the same job.
 - `-webkit-font-smoothing: antialiased` on body
 - `text-wrap: balance` on headings
 - `font-variant-numeric: tabular-nums` on dynamic numbers
@@ -72,8 +79,11 @@ These apply to every frontend output. No exceptions.
 - One dominant color owns 70%+ of the canvas. One accent used sparingly.
 - CSS custom properties for every color token. No hardcoded values.
 - Background has depth — never a flat solid. Use gradient meshes, noise textures, dot grids, vignettes, or layered transparencies.
+- **Grain/noise overlay is baseline, not optional.** A subtle noise texture at 3–5% opacity with `mix-blend-mode: overlay` breaks digital flatness on nearly every project. Treat it as a default atmospheric layer.
+- **Consider scroll-driven palette shifts.** The color scheme doesn't have to be static — sections can transition between palettes as the user scrolls, using `[data-theme]` attributes or CSS custom property updates tied to scroll position. This creates narrative progression through atmosphere alone.
 
 ### Motion
+- **Not every project needs animation.** Luxury, editorial, and enterprise product sites often achieve their best work with near-zero motion — just perfect typography, spacing, and image treatment. If the brief calls for "professional" or "clean," consider whether restraint serves the intent better than animation.
 - Animation earns its place: if removing it changes nothing, cut it.
 - Enter animations: split content into semantic chunks, stagger at `~100ms`. Headlines split into words at `~80ms`. Combine `opacity: 0`, `translateY(8px)`, `blur(4px)`. Enter duration: `300–400ms`.
 - Exit animations: subtle. Use `translateY(-12px)` + `opacity: 0`, not full slide-outs. Exit duration: `~150ms` — shorter than enter.
@@ -133,10 +143,10 @@ Read these **only when the task requires deeper guidance** in that domain. The c
 | `References/typography.md` | Choosing fonts, kinetic type, variable font animation, text reveals |
 | `References/color-and-theme.md` | Building a new palette, theme switching, atmospheric backgrounds |
 | `References/motion.md` | Complex animation sequences, GSAP/ScrollTrigger, Motion gestures, scroll experiences |
-| `References/layout.md` | Full page layouts, grid-breaking, spatial composition, non-linear navigation |
+| `References/layout.md` | Full page layouts, grid-breaking, spatial composition, bento grids, sticky glass nav, non-linear navigation |
 | `References/responsive-design.md` | Multi-viewport support, fluid systems, responsive images, mobile-specific concerns |
 | `References/micro-interactions.md` | Custom cursors, magnetic buttons, clip-path reveals, visual refinement details |
-| `References/landing-pages.md` | Page archetypes, hero patterns, scroll storytelling, page transitions, video integration |
+| `References/landing-pages.md` | Page archetypes, hero patterns, scroll storytelling, page transitions, video integration, preloaders, non-standard navigation, scroll-driven theming |
 | `References/3d-and-webgl.md` | Three.js, shaders, 3D performance, particle systems |
 | `References/accessibility-and-performance.md` | WCAG compliance, performance budgets, font loading, code splitting |
 | `References/cdn-and-libraries.md` | CDN links, library setup, React patterns for GSAP/Three.js/Motion, font loading |
