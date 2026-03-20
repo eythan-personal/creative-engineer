@@ -7,25 +7,54 @@ This skill guides creation of distinctive, production-grade frontend interfaces 
 
 ## Design Thinking
 
-Before writing a single line of code, make three decisions:
+**MANDATORY: Before writing ANY code, state your three decisions explicitly.** Write them out as a brief creative brief. Do not skip this step. Do not default to safe choices. The output must include your reasoning.
 
-1. **Concept** — What is the ONE thing someone will remember about this interface? A cinematic scroll reveal? A single perfect interaction? A typographic statement? The best creative work has a thesis. Decide yours.
+### 1. Concept
+What is the ONE thing someone will remember about this interface? Not "it looked nice" — a specific, defensible idea. Examples:
+- "The entire page is a single scroll-driven camera move through a 3D scene"
+- "Typography IS the interface — no images, no icons, just type at extreme scale"
+- "Every section uses a different clip-path reveal triggered by scroll"
+- "The site feels like opening a physical book — page turns, paper texture, serif type"
 
-2. **Aesthetic Temperature** — Pick a position and commit fully:
-   - Brutally minimal → Luxury/refined → Editorial/magazine → Art deco/geometric
-   - Soft/organic/wabi → Retro-futuristic → Maximalist chaos → Brutalist/raw
-   - Industrial/utilitarian → Playful/toy-like → Noir/cinematic → Warm humanist
-   - 8-bit/pixel → Glassmorphic → Neubrutalist → Swiss/grid-strict
-   Use these as starting points, not destinations. The best work synthesizes across categories.
+If you can't state the concept in one sentence, you don't have one yet.
 
-3. **Technical Strategy** — Match the stack to the vision:
-   - Pure CSS animation for elegant reveals and micro-interactions
-   - GSAP + ScrollTrigger for scroll-driven storytelling and complex timelines
-   - Three.js / R3F for 3D scenes, particle systems, and shader effects
-   - Motion (Framer Motion) for React-first declarative UI transitions and gestures
-   - Lottie for designer-grade vector animations
-   - Canvas 2D for custom particle effects and generative visuals
-   - CSS-only when restraint IS the aesthetic
+### 2. Aesthetic Temperature
+Pick a position and commit fully. But **do not default to dark background + warm accent + editorial serif.** That is the AI-generated portfolio default. Actively pick something less obvious.
+
+Spectrum positions:
+- Brutally minimal → Luxury/refined → Editorial/magazine → Art deco/geometric
+- Soft/organic/wabi → Retro-futuristic → Maximalist chaos → Brutalist/raw
+- Industrial/utilitarian → Playful/toy-like → Noir/cinematic → Warm humanist
+- 8-bit/pixel → Glassmorphic → Neubrutalist → Swiss/grid-strict
+
+**Variety mechanism:** Before choosing, consider the current date. Use it to rotate your starting instinct — if today's date is even, start from the bottom half of the spectrum. If odd, the top half. Then synthesize from there. The goal is to never produce the same aesthetic twice.
+
+### 3. Technical Strategy
+Match the stack to the vision — don't reach for everything:
+- Pure CSS animation for elegant reveals and micro-interactions
+- GSAP + ScrollTrigger for scroll-driven storytelling and complex timelines
+- Three.js / R3F for 3D scenes, particle systems, and shader effects
+- Motion (Framer Motion) for React-first declarative UI transitions and gestures
+- Lottie for designer-grade vector animations
+- Canvas 2D for custom particle effects and generative visuals
+- CSS-only when restraint IS the aesthetic
+
+Pick ONE primary strategy. Adding a particle canvas AND scroll animations AND custom cursors AND a marquee is not a strategy — it's a grab bag.
+
+## Default Traps
+
+These aren't anti-patterns (they can be done well) — but they're what AI defaults to when it has no strong concept. If you catch yourself reaching for any of these, pause and ask whether you chose it or fell into it:
+
+- Dark background (#0A0A0A) + warm/gold accent + Instrument Serif
+- Particle constellation canvas in the hero
+- "Let's build *something*" or "Let's work *together*" contact CTA
+- Stacked work list with hover-slide-right animation
+- Hero → About → Marquee → Work → Feature → Contact → Footer structure
+- Custom cursor as the primary interaction novelty
+- Noise texture overlay + vignette as the only atmospheric treatment
+- Marquee/ticker as a section divider
+
+Any of these can be great if it's a deliberate choice that serves the concept. None of them are great as a default.
 
 ## Core Rules
 
