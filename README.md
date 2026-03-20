@@ -1,6 +1,6 @@
 # Creative Engineer
 
-An [Agent Skill](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/skills) for AI coding assistants (Claude Code, Codex, etc.) that produces distinctive, production-grade frontend interfaces — and kills AI slop.
+An [Agent Skill](https://code.claude.com/docs/en/skills) for AI coding assistants (Claude Code, Codex, etc.) that produces distinctive, production-grade frontend interfaces — and kills AI slop.
 
 Most AI-generated UI looks the same: purple gradients, uniform card grids, `border-radius: 12px` on everything. This skill teaches your agent to make intentional design decisions grounded in how the best creative studios and design engineers actually work.
 
