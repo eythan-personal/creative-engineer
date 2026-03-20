@@ -3,25 +3,22 @@ name: creative-engineer
 description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics. Covers the full creative development spectrum including WebGL, 3D, shaders, scroll-driven animation, motion design, typography, layout, micro-interactions, and landing page craft.
 ---
 
-This skill guides creation of distinctive, production-grade frontend interfaces. The goal is not to build sites that look good — it's to build interfaces that feel alive. Every decision about type, color, motion, and space should serve an emotional intent. The best interfaces don't announce their craft — they make you feel something before you've consciously noticed a single design choice.
+This skill guides creation of distinctive, production-grade frontend interfaces. Start with how the interface should feel, then let every technical decision serve that feeling.
 
 ## Design Thinking
 
 **MANDATORY: Before writing ANY code, state your three decisions explicitly.** Write them out as a brief creative brief. Do not skip this step. Do not default to safe choices. The output must include your reasoning.
 
 ### 1. Concept
-Start with a feeling, not a feature. What emotional state should someone be in after 5 seconds on this page? Not "impressed by the animation" — something more specific: *momentum*, *stillness*, *tension*, *warmth*, *precision*, *play*. That feeling becomes the concept, and every technical decision flows from it.
+Start with a feeling, not a feature. Define the interface in one sentence describing what it feels like to use — not what it looks like:
+- "Already in motion when you arrive — everything has velocity"
+- "Quiet, tactile, considered — like opening a physical book"
+- "Dark, focused, instrument-precise — inside a cockpit"
+- "The interface disappears — only the content exists"
 
-Then define it in one sentence — not what the site looks like, but what it feels like to use:
-- "The site feels like it's already in motion when you arrive — everything has velocity"
-- "It feels like opening a physical book — quiet, tactile, considered"
-- "It feels like being inside a cockpit — dark, focused, instrument-precise"
-- "It feels like walking through a gallery — generous space, each piece given room to breathe"
-- "It feels like nothing — the interface disappears and only the content exists"
+If you can't describe the feeling, you don't have a concept yet.
 
-If you can't describe the feeling, you don't have a concept yet. You have a layout.
-
-**The strongest concepts make the medium the message.** A portfolio that IS an interactive experience is more memorable than one that shows screenshots of interactive experiences. A product page that feels like using the product is more persuasive than one that describes it. Ask: can the interface itself embody what it's communicating?
+When possible, make the medium the message — an interface that embodies what it communicates is more memorable than one that describes it.
 
 ### 2. Aesthetic Temperature
 Pick a position and commit fully. But **do not default to dark background + warm accent + editorial serif.** That is the AI-generated portfolio default. Actively pick something less obvious.
@@ -43,7 +40,7 @@ Match the stack to the vision — don't reach for everything:
 - Lottie for designer-grade vector animations
 - Canvas 2D for custom particle effects and generative visuals
 - CSS-only when restraint IS the aesthetic
-- **Nothing.** Zero animation, zero effects — when the content and typography are strong enough to carry the page alone. Some of the most respected product and luxury sites use almost no motion. Restraint is not a failure of imagination — it's a deliberate choice that signals confidence.
+- **Nothing.** Zero animation — when the content and typography carry the page alone. Restraint is a deliberate choice, not a failure of imagination.
 
 Pick ONE primary strategy. Adding a particle canvas AND scroll animations AND custom cursors AND a marquee is not a strategy — it's a grab bag.
 
@@ -78,14 +75,14 @@ These apply to every frontend output. No exceptions.
 ### Color
 - One dominant color owns 70%+ of the canvas. One accent used sparingly.
 - CSS custom properties for every color token. No hardcoded values.
-- **Content should feel lit, not placed.** The background isn't just a surface — it's an environment. Dark canvases make images feel like they're glowing on a lightbox. Light canvases with warm undertones make content feel sunlit. The relationship between background and content creates atmosphere. A flat `#FFFFFF` background creates no atmosphere.
-- Build depth into the canvas: gradient meshes, noise textures, dot grids, vignettes, or layered transparencies. Grain/noise overlay at 3–5% opacity with `mix-blend-mode: overlay` is baseline — it breaks digital flatness on nearly every project.
+- **Content should feel lit, not placed.** Dark canvases make images glow like a lightbox. Warm light canvases make content feel sunlit. A flat `#FFFFFF` creates no atmosphere — treat the background as an environment.
+- Build depth into the canvas: gradient meshes, noise textures, dot grids, vignettes, or layered transparencies. Grain/noise overlay at 3–5% opacity with `mix-blend-mode: overlay` is baseline.
 - **Consider scroll-driven palette shifts.** The color scheme doesn't have to be static — sections can transition between palettes as the user scrolls, using `[data-theme]` attributes or CSS custom property updates tied to scroll position. This creates narrative progression through atmosphere alone.
 
 ### Motion
-- **Not every project needs animation.** Luxury, editorial, and enterprise product sites often achieve their best work with near-zero motion — just perfect typography, spacing, and image treatment. If the brief calls for "professional" or "clean," consider whether restraint serves the intent better than animation. Quiet confidence doesn't need to move.
-- **When you do animate, define the physics first.** Every interface has an implied physical character. Is it heavy or light? Fast or deliberate? Does it have momentum or is it precise? Define this before choosing easing curves. A site about speed should have elements that enter fast and decelerate with control — like braking into a corner. A site about craft should have motion that's slow, intentional, and weighty. The easing and timing follow from the feeling, not the other way around.
-- **Elements should arrive, not appear.** Nothing should simply pop into existence. Everything enters from somewhere — sliding in with purpose, scaling up from a point, wiping in from an edge. The direction of entry should imply where the element came from, creating spatial coherence even in 2D.
+- **Not every project needs animation.** If the brief calls for "professional" or "clean," consider whether zero motion serves the intent better. Restraint is valid.
+- **Define the physics before the easing curve.** Is the interface heavy or light? Fast or deliberate? A site about speed: elements enter fast, decelerate with control. A site about craft: motion is slow, intentional, weighty. Pick easing and duration to match.
+- **Elements arrive, not appear.** Everything enters from somewhere — a direction, a point, an edge. The entry direction implies spatial origin.
 - Animation earns its place: if removing it changes nothing, cut it.
 - Enter animations: split content into semantic chunks, stagger at `~100ms`. Headlines split into words at `~80ms`. Combine `opacity: 0`, `translateY(8px)`, `blur(4px)`. Enter duration: `300–400ms`.
 - Exit animations: subtle. Use `translateY(-12px)` + `opacity: 0`, not full slide-outs. Exit duration: `~150ms` — shorter than enter.
@@ -103,9 +100,9 @@ These apply to every frontend output. No exceptions.
 
 ### Layout
 - Asymmetric layouts create tension. One large + one small beats two medium.
-- **Pace the scroll like a director paces a film.** Some sections should breathe — generous space, a single image, room for the eye to rest. Then tighten up — dense grids, tight spacing, rapid information. Then open back up. This push-and-pull between immersion and scanning keeps the user engaged without fatiguing them. A page with uniform density is monotonous. A page with tempo changes is alive.
-- Vary section spacing to create rhythm — not identical padding everywhere. Hero sections: generous (120–200px). Content: moderate (80–120px). Dense functional areas: compact (40–60px).
-- **Break scroll direction when the content calls for it.** A horizontal scroll section inside a vertical page forces the user to engage differently — it interrupts muscle memory and creates a distinct moment. Use sparingly and intentionally.
+- **Pace the scroll with tempo changes.** Alternate between breathing room (generous space, single image) and density (tight grids, rapid information). Uniform density is monotonous. Variation keeps the user engaged.
+- Vary section spacing: hero sections `120–200px`, content `80–120px`, dense functional areas `40–60px`.
+- **Break scroll direction sparingly.** A horizontal scroll section inside a vertical page interrupts muscle memory and creates a distinct moment. Use when the content earns it.
 - Use CSS Grid with `clamp()` for fluid sizing. `auto-fit` + `minmax` for self-responsive grids.
 - Cap content width: `width: min(100% - 2rem, 1200px)`. Body text max `65ch`.
 
@@ -136,7 +133,7 @@ These signal generic AI output. Avoid all of them:
 - Identical enter and exit animations
 - Over-animation with no hierarchy or purpose
 
-The cure: start with a feeling. If you can describe how the interface should make someone feel — and every decision (palette, type, motion, spacing) serves that feeling — the output will have a point of view. If you can swap the palette and fonts and it feels the same, you started with technique instead of intent.
+The cure: if you can swap the palette and fonts and it feels the same, the design has no point of view. Start with a feeling, then make every choice serve it.
 
 ## Reference Files
 
